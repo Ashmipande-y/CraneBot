@@ -1,7 +1,3 @@
-"""
-Run ONCE against your server to build the full category/channel/role structure.
-python3 setup_channels.py
-"""
 import os
 import asyncio
 import discord
