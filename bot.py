@@ -1,8 +1,3 @@
-"""
-CraneBot — caveman architecture.
-One file. No cogs. No ORM. Read top to bottom, understand everything.
-"""
-
 import os
 import time
 import asyncio
