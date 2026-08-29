@@ -238,7 +238,11 @@ CraneBot/
 - **[python-dotenv](https://github.com/theskumar/python-dotenv)** — Environment variable loader
 
 ---
-
 ## 📜 License
 
-Do whatever you want with it.
+This project is licensed under the MIT License.
+
+Copyright (c) 2026 Ashmipande-y & ACERON1301
+
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of this software, subject to the MIT License.
+
