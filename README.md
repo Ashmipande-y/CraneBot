@@ -1,38 +1,32 @@
-# 🦾 CraneBot
+#CraneBot
 
 > Self-contained Discord bot for communities — onboarding, tickets, moderation, meetings, standups, and a live GitHub activity feed.
 
 > "Caveman architecture." One file. No cogs. No ORM. Read `bot.py` top to bottom and understand everything.
-
 ---
-
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---|---|
-| 👋 **Welcome & Role Reactions** | Auto-welcome message + emoji-based self-serve roles (Founder / Engineer / Designer / Marketing) |
-| 🎫 **Private Tickets** | `!ticket <topic>` opens a private channel, `!close` shuts it down |
-| 🛡️ **Moderation** | Kick, ban, bulk purge, full mod-log channel |
-| 🔒 **PIN-gated Admin Mode** | `!admin <pin>` unlocks meeting-schedule and ban commands (auto-expires) |
-| 📅 **Meetings** | Schedule announcements + post join links |
-| ⏰ **Daily Standup** | Auto-ping every 24h with a reminder prompt |
-| ⏲️ **In-channel Reminders** | `!remind <minutes> <text>` for quick pings |
-| 📦 **GitHub Webhook Feed** | Push commits, PRs, and issues straight into `#github-feed` |
-| 🏗️ **Server Setup Script** | One-shot `setup_channels.py` builds the full category/channel structure |
-
+| **Welcome & Role Reactions** | Auto-welcome message + emoji-based self-serve roles (Founder / Engineer / Designer / Marketing) |
+| **Private Tickets** | `!ticket <topic>` opens a private channel, `!close` shuts it down |
+| **Moderation** | Kick, ban, bulk purge, full mod-log channel |
+| **PIN-gated Admin Mode** | `!admin <pin>` unlocks meeting-schedule and ban commands (auto-expires) |
+| **Meetings** | Schedule announcements + post join links |
+| **Daily Standup** | Auto-ping every 24h with a reminder prompt |
+| **In-channel Reminders** | `!remind <minutes> <text>` for quick pings |
+| **GitHub Webhook Feed** | Push commits, PRs, and issues straight into `#github-feed` |
+| **Server Setup Script** | One-shot `setup_channels.py` builds the full category/channel structure |
 ---
-
-## 📋 Prerequisites
+##Prerequisites
 
 - **Python 3.10+**
 - A [Discord Application & Bot Token](https://discord.com/developers/applications)
   - Enable **Server Members Intent** and **Message Content Intent** under the "Bot" settings tab
 - Invite the bot to your server with at minimum these permissions:
   - Manage Roles, Manage Channels, Kick Members, Ban Members, Manage Messages, Send Messages, Read Message History, Add Reactions
-
 ---
-
-## 🚀 Quick Start (Local)
+##Quick Start (Local)
 
 ```bash
 # 1. Clone and install
@@ -58,7 +52,7 @@ python3 bot.py
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 Copy `.env.example` to `.env` and fill in the values:
 
@@ -78,11 +72,11 @@ Copy `.env.example` to `.env` and fill in the values:
 | `ADMIN_PIN` | Optional | — | PIN code that unlocks `!schedule`, `!meetlink`, `!ban` |
 | `ADMIN_SESSION_MINUTES` | No | `15` | How long an `!admin` session lasts before re-locking |
 
-> 🔐 **Never commit `.env`.** It's already in `.gitignore`.
+>**Never commit `.env`.** It's already in `.gitignore`.
 
 ---
 
-## 🏗️ Setting Up the Server Structure
+##Setting Up the Server Structure
 
 Run `setup_channels.py` **once** against your empty guild. It will:
 
@@ -100,13 +94,13 @@ After it runs, copy-paste the printed IDs into `.env`. For the `ROLE_SELECT_MESS
 1. Go to `#welcome-rules` and send a message like:
    ```
    React to grab your role:
-   🧠 Founder  ·  🛠️ Engineer  ·  🎨 Designer  ·  📈 Marketing
+   Founder  ·   Engineer  ·   Designer  ·   Marketing
    ```
 2. Pin it, right-click → Copy Message ID → paste into `.env`.
 
 ---
 
-## 📖 Command Reference
+##Command Reference
 
 ### Everyone
 
@@ -143,7 +137,7 @@ After it runs, copy-paste the printed IDs into `.env`. For the `ROLE_SELECT_MESS
 
 ---
 
-## 📡 GitHub Webhook Setup
+##GitHub Webhook Setup
 
 The bot ships with a built-in aiohttp web server sharing the bot's event loop.
 
@@ -157,7 +151,7 @@ The bot ships with a built-in aiohttp web server sharing the bot's event loop.
 
 ---
 
-## ☁️ Production Deployment (systemd on Ubuntu)
+##Production Deployment (systemd on Ubuntu)
 
 The repo includes `cranebot.service` (and `trackforge-bot.service` as a legacy alias). Adjust the paths and user to match your server:
 
@@ -194,7 +188,7 @@ sudo journalctl -u cranebot -f
 
 ---
 
-## 📁 Project Layout
+##Project Layout
 
 ```
 CraneBot/
@@ -209,7 +203,7 @@ CraneBot/
 
 ---
 
-## 🔐 Security Notes
+##Security Notes
 
 - **`.env` must never be committed.** It contains secrets. `.env.example` is safe.
 - Use `!admin <pin>` via DM — the bot auto-deletes public pin messages when possible.
@@ -218,7 +212,7 @@ CraneBot/
 
 ---
 
-## 🔧 Troubleshooting
+##Troubleshooting
 
 | Symptom | Fix |
 |---|---|
@@ -231,14 +225,14 @@ CraneBot/
 
 ---
 
-## 🛠️ Tech Stack
+##Tech Stack
 
 - **[discord.py 2.x](https://github.com/Rapptz/discord.py)** — Discord API wrapper
 - **[aiohttp](https://github.com/aio-libs/aiohttp)** — Async HTTP server for GitHub webhooks
 - **[python-dotenv](https://github.com/theskumar/python-dotenv)** — Environment variable loader
 
 ---
-## 📜 License
+##License
 
 This project is licensed under the MIT License.
 
