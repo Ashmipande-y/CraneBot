@@ -1,0 +1,16 @@
+[Unit]
+Description=CraneBot — Discord Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/cranebot
+ExecStart=/home/ubuntu/cranebot/venv/bin/python3 bot.py
+Restart=always
+RestartSec=5
+EnvironmentFile=/home/ubuntu/cranebot/.env
+
+[Install]
+WantedBy=multi-user.target
